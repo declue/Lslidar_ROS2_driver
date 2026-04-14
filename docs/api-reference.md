@@ -17,18 +17,18 @@ classDiagram
         -open_serial()
         -lidar_difop()
         -lidar_order(Int8)
-        -data_processing(uchar*, int)
-        -data_processing_2(uchar*, int)
-        -difop_processing(uchar*)
+        -data_processing(uchar, int)
+        -data_processing_2(uchar, int)
+        -difop_processing(uchar)
         -pubScanThread()
-        -recvThread_crc(int&, int&)
-        -receive_data(uchar*) int
-        -getScan(vector~ScanPoint~&, Time&, float&) int
+        -recvThread_crc(int, int)
+        -receive_data(uchar) int
+        -getScan(vector&lt;ScanPoint&gt;, Time, float) int
         -get_gps_stamp(tm) uint64_t
-        -N10_CalCRC8(uchar*, int) uint8_t
-        -scan_points_ vector~ScanPoint~
-        -msop_input_ Input*
-        -serial_ LSIOSR*
+        -N10_CalCRC8(uchar, int) uint8_t
+        -scan_points_ vector&lt;ScanPoint&gt;
+        -msop_input_ Input_ptr
+        -serial_ LSIOSR_ptr
         -scan_pub Publisher
         -point_cloud_pub Publisher
         -difop_switch Subscription
@@ -279,7 +279,7 @@ CRC8을 계산합니다.
 classDiagram
     class Input {
         <<abstract>>
-        +Input(Node*, uint16_t)
+        +Input(Node_ptr, uint16_t)
         +~Input()
         +getPacket(LslidarPacket) int
         +getRpm() int
@@ -288,7 +288,7 @@ classDiagram
         +clearUpdateFlag()
         +UDP_order(Int8)
         +UDP_difop()
-        #private_nh_ Node*
+        #private_nh_ Node_ptr
         #port_ uint16_t
         #cur_rpm_ int
         #return_mode_ int
@@ -392,7 +392,7 @@ UDP DIFOP를 처리합니다.
 ```mermaid
 classDiagram
     class InputSocket {
-        +InputSocket(Node*, uint16_t)
+        +InputSocket(Node_ptr, uint16_t)
         +~InputSocket()
         +getPacket(LslidarPacket) int
         -devip_ in_addr
@@ -437,10 +437,10 @@ int InputSocket::getPacket(lslidar_msgs::msg::LslidarPacket::UniquePtr &packet)
 ```mermaid
 classDiagram
     class InputPCAP {
-        +InputPCAP(Node*, uint16_t, double, string)
+        +InputPCAP(Node_ptr, uint16_t, double, string)
         +~InputPCAP()
         +getPacket(LslidarPacket) int
-        -pcap_ pcap_t*
+        -pcap_ pcap_t_ptr
         -filename_ string
         -packet_rate_ Rate
         -empty_ bool
@@ -489,10 +489,10 @@ PCAP 파일에서 패킷을 가져옵니다.
 ```mermaid
 classDiagram
     class LSIOSR {
-        +instance(string, int, int) LSIOSR*
+        +instance(string, int, int) LSIOSR_ptr
         +~LSIOSR()
-        +read(uchar*, int, int) int
-        +send(char*, int, int) int
+        +read(uchar, int, int) int
+        +send(char, int, int) int
         +flushinput()
         +init() int
         +close() int

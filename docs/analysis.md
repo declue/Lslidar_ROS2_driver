@@ -259,9 +259,9 @@ graph TB
     end
 
     subgraph "하드웨어 상태"
-        TEMP[온도<br/>-20°C ~ 60°C]
-        RPM[RPM<br/>600 ~ 1200]
-        POWER[전압<br/>9V ~ 32V]
+        TEMP[온도<br/>-20°C to 60°C]
+        RPM[RPM<br/>600 to 1200]
+        POWER[전압<br/>9V to 32V]
     end
 
     subgraph "통신 상태"
@@ -322,21 +322,21 @@ graph TB
 ```mermaid
 graph TB
     subgraph "성능 지표"
-        LATENCY[지연 시간<br/>< 50ms]
-        THROUGHPUT[처리량<br/>~400K points/s]
-        CPU[CPU 사용량<br/>< 20%]
-        MEMORY[메모리 사용량<br/>< 100MB]
+        LATENCY[지연 시간<br/>less than 50ms]
+        THROUGHPUT[처리량<br/>about 400K points/s]
+        CPU[CPU 사용량<br/>less than 20%]
+        MEMORY[메모리 사용량<br/>less than 100MB]
     end
 
     subgraph "네트워크"
-        BANDWIDTH[대역폭<br/>~10 Mbps]
-        PACKET_SIZE[패킷 크기<br/>~1200 bytes]
+        BANDWIDTH[대역폭<br/>about 10 Mbps]
+        PACKET_SIZE[패킷 크기<br/>about 1200 bytes]
         PACKET_RATE[패킷률<br/>10-20 Hz]
     end
 
     subgraph "출력"
         SCAN_RATE[스캔률<br/>10-20 Hz]
-        POINTS_PER_SCAN[포인트/스캔<br/>~20000]
+        POINTS_PER_SCAN[포인트/스캔<br/>about 20000]
         TOPIC_RATE[토픽률<br/>10-20 Hz]
     end
 

@@ -130,7 +130,7 @@ classDiagram
         -pubScanThread()
         -recvThread_crc()
         -getScan()
-        -scan_points_ vector~ScanPoint~
+        -scan_points_ vector&lt;ScanPoint&gt;
         -msop_input_ Input*
         -serial_ LSIOSR*
         -scan_pub Publisher
@@ -163,7 +163,7 @@ classDiagram
         +InputPCAP(Node*, uint16_t, double, string)
         +~InputPCAP()
         +getPacket() int
-        -pcap_ pcap_t*
+        -pcap_ pcap_t_ptr
         -filename_ string
         -packet_rate_ Rate
     }

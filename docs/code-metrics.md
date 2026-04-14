@@ -9,15 +9,16 @@
 ### cloc 분석 결과
 
 ```mermaid
-pie title 전체 코드 규모 (언어별)
-    "C++" : 1955
-    "C/C++ Header" : 255
-    "YAML" : 230
-    "Python" : 72
-    "CMake" : 67
-    "XML" : 52
-    "Gencat NLS" : 23
-    "Markdown" : 22
+bar
+    title 전체 코드 규모 (언어별)
+    C++ : 1955
+    C_C_Header : 255
+    YAML : 230
+    Python : 72
+    CMake : 67
+    XML : 52
+    Gencat_NLS : 23
+    Markdown : 22
 ```
 
 ### 전체 통계
@@ -189,14 +190,15 @@ bar
 ### lslidar_driver 패키지
 
 ```mermaid
-pie title lslidar_driver 패키지 구성
-    "C++ 소스" : 1941
-    "C++ 헤더" : 255
-    "Python" : 72
-    "YAML" : 69
-    "CMake" : 38
-    "XML" : 32
-    "RViz" : 161
+bar
+    title lslidar_driver 패키지 구성
+    Cpp_source : 1941
+    Cpp_header : 255
+    Python : 72
+    YAML : 69
+    CMake : 38
+    XML : 32
+    RViz : 161
 ```
 
 | 항목 | 값 |
@@ -211,10 +213,11 @@ pie title lslidar_driver 패키지 구성
 ### lslidar_msgs 패키지
 
 ```mermaid
-pie title lslidar_msgs 패키지 구성
-    "메시지 정의" : 23
-    "CMake" : 29
-    "XML" : 20
+bar
+    title lslidar_msgs 패키지 구성
+    msg_def : 23
+    CMake : 29
+    XML : 20
 ```
 
 | 항목 | 값 |
@@ -233,19 +236,19 @@ pie title lslidar_msgs 패키지 구성
 ```mermaid
 graph TB
     subgraph "lslidar_driver.cc"
-        FUNC1[~20개 함수]
+        FUNC1[약 20개 함수]
         FUNC2[데이터 처리 로직]
         FUNC3[파싱 함수]
     end
 
     subgraph "input.cc"
-        FUNC4[~10개 함수]
+        FUNC4[약 10개 함수]
         FUNC5[소켓 처리]
         FUNC6[PCAP 처리]
     end
 
     subgraph "lsiosr.cpp"
-        FUNC7[~15개 함수]
+        FUNC7[약 15개 함수]
         FUNC8[시리얼 통신]
         FUNC9[버퍼 관리]
     end
@@ -443,9 +446,10 @@ graph TB
 ### 현재 상태
 
 ```mermaid
-pie title 테스트 커버리지 (추정)
-    "테스트됨" : 0
-    "테스트 안됨" : 100
+bar
+    title 테스트 커버리지 (추정)
+    tested : 0
+    not_tested : 100
 ```
 
 | 항목 | 상태 | 설명 |
@@ -459,12 +463,12 @@ pie title 테스트 커버리지 (추정)
 ### 유지보수성 점수
 
 ```mermaid
-gauge
+bar
     title 유지보수성 점수 (추정)
-    "코드 품질" : 65
-    "문서화" : 70
-    "테스트" : 20
-    "복잡도" : 50
+    code_quality : 65
+    documentation : 70
+    testing : 20
+    complexity : 50
 ```
 
 ### 개선 권장사항
